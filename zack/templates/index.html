@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Main Content -->
+    <div style="position: absolute; right: 400px; top:250px;">
+      <a href="{{ url_for('.info') }}">Πληροφορία</a>
+    </div>
+    <main>
+    <ul style="list-style: none;">
+      {% for post in context %}
+      <li>
+        <div class="block" id="postblock">
+          <a href="post/{{ post.postid }}">
+            <img class="image" src="{{ post.image }}">
+          <div class="text">
+            <div>
+              {{ post.title }}
+            </div>
+          </div>
+          </a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </main>
+{% endblock %}

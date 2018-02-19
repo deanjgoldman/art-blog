@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ZACK MARSHALL</title>
+ <!-- Scripts for Base.html -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  // Blueprint of spacing dimensions for index images
+  $(window).on("load, resize", function() {
+      var viewportWidth = $(window).width();
+      if (viewportWidth < 600) {
+        $(".postimage").removeClass("postimage").addClass("postblock");
+      }
+   });
+  var spacing = [
+    [400, 20],
+    [300, -300],
+    [200, -600],
+    [100, -900],
+    [0, -1200],
+    [-100, -1500],
+    [-200, -1800],
+    [400, -1200],
+    [300, -1500],
+    [200, -1800],
+    [100, -2100],
+    [0, -2400],
+    [-100, -2700],
+    [-200, -3000]
+  ];
+    $(function() {
+      $('.block').each(function(i,el){
+        $(el).css({"right": spacing[i][0], "top": spacing[i][1]});
+      });
+    });
+  </script>
+  </head>
+
+  <body>
+<style>
+    body{
+      background-color: #9f95a8;
+    }
+    .topnav{
+      margin-top: -10px;
+      overflow: scroll;
+    }
+    .topnav ul {
+      color: #000000;
+      list-style-type: none;
+    }
+    .topnav li {
+      margin-top: 5px;
+      font-size: 20px;
+      margin-right: 50px;
+      text-align: left;
+    }
+    a, a:visited {
+      text-decoration: none;
+      color:black;
+    }
+    footer {
+      margin-top: 30%;
+    }
+    .postimage{
+      position:relative;
+      width:300px;
+      margin: 0 auto;
+    }
+    .imagegallery{
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    .toptext{
+      display: flex;
+      float: right;
+      padding: 20px
+    }
+    img {
+      width: 100%;
+    }
+    .welcome{
+      margin-top: 50px;
+      margin-bottom: 70px;
+    }
+    #postblock {position:relative; width:300px; margin: 0 auto;}
+    #postblock .image,
+    #postblock .text {transition: 0.1s;}
+    #postblock .text {
+      position:absolute;
+      color:black;
+      top:50%;
+      left:25px;
+      opacity:0;
+      transform: translate(0, -50%);
+      width: 80%;
+    }
+
+    #postblock:hover .text {
+      opacity: 1;
+      background-color: #9f95a8;
+    }
+    @media screen and (max-width: 699px) {
+
+        main .postblock {
+            width: 100%;
+        }
+        .topnav {
+            float: left;
+        }
+        .topnav ul li {
+            font-size: 120%;
+        }
+        ul li div {
+          right: 20% !important;
+        }
+        .toptext {
+          padding: 20px;
+          float: left;
+        }
+    }
+
+
+</style>
+    <!-- Nav -->
+        <div class="topnav">
+          <ul>
+            <li>
+              <a href="{{ url_for('index') }}">ZACK MARSHALL &Psi;</a>
+
+            </li>
+            <li>
+              <div id="txt"></div>
+            </li>
+          </ul>
+        </div>
+
+<div>
+  <!-- endnav -->
+    <!-- Main Content -->
+{% block content %}
+
+{% endblock %}
+</div>
+  </body>
+
+</html>

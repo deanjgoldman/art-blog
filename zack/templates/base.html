@@ -98,6 +98,10 @@
       margin-top: 50px;
       margin-bottom: 70px;
     }
+    .image-scroll{
+      width: 1100px;
+      background-color: #e0dbc3;
+    }
     #postblock {position:relative; width:300px; margin: 0 auto;}
     #postblock .image,
     #postblock .text {transition: 0.1s;}
@@ -116,9 +120,15 @@
       background-color: #9f95a8;
     }
     @media screen and (max-width: 699px) {
-
+        .image-scroll{
+          width: 88%;
+        }
         main .postblock {
             width: 100%;
+            right: 40px;
+        }
+        #postblock{
+          margin-left: 15%;
         }
         .topnav {
             float: left;

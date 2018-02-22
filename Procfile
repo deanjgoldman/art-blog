@@ -1,1 +1,1 @@
-web: gunicorn zack.app:app
+web: gunicorn zack:app

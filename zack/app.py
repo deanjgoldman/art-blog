@@ -39,6 +39,11 @@ def info():
     return render_template('info.html')
 
 
+@app.route('/cv')
+def cv():
+    return render_template('cv.html')
+
+
 @app.route('/contact')
 def contact():
     return render_template('contact.html')

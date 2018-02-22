@@ -42,13 +42,45 @@
         $(el).css({"right": spacing[i][0], "top": spacing[i][1]});
       });
     });
+    // $(function () {
+    //   $("#cv-link").hover(function (e) {
+    //     $(this).html("Curriculum Vitae");
+    //   })
+    // })
   </script>
+<script type="text/javascript">
+  function cvText(text)
+    {
+        var display = document.getElementById('cv-link');
+        display.innerHTML = "";
+        display.innerHTML = text;
+    }
+  function cvBack(text)
+    {
+        var display = document.getElementById('cv-link');
+        display.innerHTML = "";
+        display.innerHTML = text;
+    }
+  function infoText(text)
+    {
+        var display = document.getElementById('info-link');
+        display.innerHTML = "";
+        display.innerHTML = text;
+    }
+  function infoBack(text)
+    {
+        var display = document.getElementById('info-link');
+        display.innerHTML = "";
+        display.innerHTML = text;
+    }
+</script>
+
   </head>
 
   <body>
 <style>
     body{
-      background-color: #9f95a8;
+      background-color: #a89f95;
     }
     .topnav{
       margin-top: -10px;
@@ -86,10 +118,15 @@
       float: right;
       padding: 20px
     }
-    .a-link{
+    #info-link{
       position: absolute;
       right: 400px;
       top:250px;
+    }
+    #cv-link{
+      position: absolute;
+      right: 400px;
+      top:50px;
     }
     img {
       width: 100%;
@@ -100,7 +137,11 @@
     }
     .image-scroll{
       width: 1100px;
-      background-color: #e0dbc3;
+      background-color: #9f95a8;
+      border-color: #4a5a52;
+      border-style: solid;
+      border-radius: 2px;
+      border-width: 6px;
     }
     #postblock {position:relative; width:300px; margin: 0 auto;}
     #postblock .image,
@@ -119,7 +160,27 @@
       opacity: 1;
       background-color: #9f95a8;
     }
+    .cv{
+      margin-top: 50px;
+    }
+    .a{
+      display: inline;
+    }
+    .a:hover {
+      display: none;
+    }
+    .b{
+      display: none;
+    }
+    .b:hover {
+      display: inline;
+    }
+
+
     @media screen and (max-width: 699px) {
+      .cv{
+        padding-top: 50px;
+      }
         .image-scroll{
           width: 88%;
         }
@@ -132,6 +193,8 @@
         }
         .topnav {
             float: left;
+            margin-left: -20px;
+            font-size: 12px;
         }
         .topnav ul li {
             font-size: 120%;
@@ -143,10 +206,15 @@
           padding: 20px;
           float: left;
         }
-        .a-link{
+        #info-link{
           position: absolute;
-          right: 0px;
+          right: 10px;
           top:0px;
+        }
+        #cv-link{
+          position: absolute;
+          right: 10px;
+          top:20px;
         }
     }
 
@@ -160,7 +228,10 @@
 
             </li>
             <li>
-                <a class="a-link" href="{{ url_for('.info') }}">Πληροφορία</a>
+                <a id="info-link" onmouseover="infoText('Information')"onmouseout="infoBack('Πληροφορία')" href="{{ url_for('.info') }}">Πληροφορία</a>
+            </li>
+            <li>
+                <a id="cv-link" onmouseover="cvText('Curriculum Vitae')"onmouseout="cvBack('βιογραφικό σημείωμα')" href="{{ url_for('.cv') }}">βιογραφικό σημείωμα</a>
             </li>
           </ul>
         </div>

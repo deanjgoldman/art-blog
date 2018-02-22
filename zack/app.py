@@ -29,7 +29,8 @@ def index():
 @app.route('/post/<int:post_id>')
 def post(post_id):
     blogpost = Blogpost.query.get(post_id)
-    title = blogpost.image
+    title = "../static/" + blogpost.title + "/" + str(blogpost.subimages.split(",")[0])
+    print(title)
     subimages = blogpost.subimages.split(",")[1:]
     return render_template('post' + str(post_id) + '.html', title=title, subimages=subimages)
 

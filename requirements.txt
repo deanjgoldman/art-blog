@@ -1,0 +1,6 @@
+Flask==0.12.2
+flask_sqlalchemy
+psycopg2
+regex
+bs4
+gunicorn

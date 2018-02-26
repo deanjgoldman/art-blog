@@ -1,0 +1,82 @@
+// $nav: #FCFAF9;
+$nav: rgb(246, 243, 234);
+$dots-bg: rgb(211,211,211);
+$dots: rgb(110,110,110);
+// $dots: #FBF7F5;
+
+$gradient:
+radial-gradient(
+circle,
+$dots 20%,
+transparent 0
+);
+
+// body{
+//   background-color: rgba(191,191,191,0.1);
+// }
+
+// .image-scroll{
+//   background-image: $gradient;
+//   background-size: 1vh 1vh;
+//   background-position: $back-pos;
+// }
+
+// body{
+//   background-image: $gradient;
+//   background-size: .5vh .5vh;
+//   background-position: $back-pos;
+// }
+.about, .cv, .image-scroll{
+  background-color: white;
+  border-width: thin;
+  border-style: solid;
+}
+
+.image-scroll{
+  // background-image: $gradient;
+  // background-size: 1vh 1vh;
+  background-color: white;
+  border-width: thin;
+  border-style: solid;
+  display: grid;
+  padding:60pt;
+  grid-template-columns: 25% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 25%;
+  /*adjust outer values if you want less padding on the sides,
+   in jsfiddle I used 5% */
+  grid-template-rows: 10% 300pt 250pt 10%;
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
+
+
+}
+//
+// .image-scroll{
+//   background-image:
+//       linear-gradient(
+//         black 25%,
+//         transparent 0
+//         ),
+//         linear-gradient(to right,
+//         black 25%,
+//         transparent 0
+//         );
+//   background-size: 1vh 1vh;
+//     border-width: thick;
+//     border-style: solid;
+//     border-color: white;
+//
+// }
+.topnav, #cv-link, #info-link{
+  padding: 2px;
+  background-color: $nav;
+  border-width: thin;
+  border-style: solid;
+
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+//
+body {
+  background-image:$gradient;
+  background-size: 1vh 1vh;
+}

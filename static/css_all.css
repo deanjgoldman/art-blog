@@ -1,0 +1,36 @@
+/* line 29 */
+.about, .cv, .image-scroll {
+  background-color: white;
+  border-width: thin;
+  border-style: solid;
+}
+
+/* line 35 */
+.image-scroll {
+  background-color: white;
+  border-width: thin;
+  border-style: solid;
+  display: grid;
+  padding: 60pt;
+  grid-template-columns: 25% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 25%;
+  /*adjust outer values if you want less padding on the sides,
+   in jsfiddle I used 5% */
+  grid-template-rows: 10% 300pt 250pt 10%;
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
+}
+
+/* line 69 */
+.topnav, #cv-link, #info-link {
+  padding: 2px;
+  background-color: #f6f3ea;
+  border-width: thin;
+  border-style: solid;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* line 79 */
+body {
+  background-image: radial-gradient(circle, #6e6e6e 20%, transparent 0);
+  background-size: 1vh 1vh;
+}

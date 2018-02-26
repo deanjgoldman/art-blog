@@ -23,30 +23,26 @@
    });
   // var spacing = [
   //   [400, 20],
-  //   [300, -300],
-  //   [200, -600],
-  //   [100, -900],
-  //   [0, -1200],
-  //   [-100, -1500],
-  //   [-200, -1800],
-  //   [400, -1200],
-  //   [300, -1500],
-  //   [200, -1800],
-  //   [100, -2100],
-  //   [0, -2400],
-  //   [-100, -2700],
-  //   [-200, -3000]
+  //   [30, -30],
+  //   [20, -60],
+  //   [10, -90],
+  //   [0, -120],
+  //   [-10, -150],
+  //   [-20, -180],
+  //   [40, -120],
+  //   [30, -150],
+  //   [20, -180],
+  //   [10, -210],
+  //   [0, -240],
+  //   [-100, -270],
+  //   [-200, -300]
   // ];
   //   $(function() {
   //     $('.block').each(function(i,el){
   //       $(el).css({"right": spacing[i][0], "top": spacing[i][1]});
   //     });
   //   });
-    // $(function () {
-    //   $("#cv-link").hover(function (e) {
-    //     $(this).html("Curriculum Vitae");
-    //   })
-    // })
+
   </script>
 <script type="text/javascript">
   function cvText(text)
@@ -74,14 +70,13 @@
         display.innerHTML = text;
     }
 </script>
-
+{% assets "css_all" %}
+    <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}"></script>
+{% endassets %}
   </head>
 
   <body>
 <style>
-    body{
-      background-color: #FBF7F5;
-    }
     .topnav{
       margin-top: -10px;
       overflow: scroll;
@@ -130,20 +125,21 @@
     }
     img {
       width: 100%;
+      box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .welcome{
       margin-top: 50px;
       margin-bottom: 70px;
     }
-    .image-scroll{
+    /*.image-scroll{
       width: 1100px;
-      background-color: #F9F1F1;
-      border-image: url("static/text.jpg") 40 round;
-      border-style: solid;
-      border-radius: 2px;
-      border-width: 6px;
+
+    }*/
+    #postblock {
+      position:relative;
+      width:300px;
+      margin: 0 auto;
     }
-    #postblock {position:relative; width:300px; margin: 0 auto;}
     #postblock .image,
     #postblock .text {transition: 0.1s;}
     #postblock .text {
@@ -175,22 +171,41 @@
     .b:hover {
       display: inline;
     }
-
+    @media screen and (max-width: 1000px) {
+      .image{
+        width: 50%;
+        display: inline-table;
+      }
+      .image-scroll{
+        display: grid;
+        padding:60pt;
+        grid-template-columns: 40% 1fr;
+        /*adjust outer values if you want less padding on the sides,
+         in jsfiddle I used 5% */
+        grid-template-rows: 10% 200pt 200pt 10%;
+        grid-column-gap: 10px;
+        grid-row-gap: 5px;
+      }
+    }
 
     @media screen and (max-width: 699px) {
+      .about, .cv{
+        padding-top: 70px;
+      }
+      .about{
+        text-align: center;
+      }
       .cv{
-        padding-top: 50px;
+        text-align: left;
       }
         .image-scroll{
-          width: 88%;
+          display: block;
         }
         main .postblock {
             width: 100%;
             right: 40px;
         }
-        #postblock{
-          margin-left: 15%;
-        }
+
         .topnav {
             float: left;
             margin-left: -20px;
@@ -225,7 +240,7 @@
         <div class="topnav">
           <ul>
             <li>
-              <a href="{{ url_for('index') }}">ZACK MARSHALL &Psi;</a>
+              <a href="{{ url_for('index') }}">ZACK MARSHALL</a>
 
             </li>
             <li>

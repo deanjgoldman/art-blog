@@ -32,6 +32,9 @@ transparent 0
   border-style: solid;
 }
 
+.gallery{
+  // margin-left: 50px;
+}
 .image-scroll{
   // background-image: $gradient;
   // background-size: 1vh 1vh;
@@ -40,14 +43,26 @@ transparent 0
   border-style: solid;
   display: grid;
   padding:60pt;
-  grid-template-columns: 25% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 25%;
-  /*adjust outer values if you want less padding on the sides,
-   in jsfiddle I used 5% */
-  grid-template-rows: 10% 300pt 250pt 10%;
+  grid-template-columns: .2fr .2fr .2fr .2fr;
   grid-column-gap: 10px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-row-gap: 5px;
-
-
+}
+.imagegallery{
+  display: grid;
+  width: 100%;
+  padding:60pt;
+  grid-template-columns: .2fr .2fr .2fr .2fr;
+  grid-column-gap: 10px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 5px;
+}
+.postimage{
+  width: 100%;
+}
+.image{
+  align-items: flex-start;
+  width: 250%;
 }
 //
 // .image-scroll{
@@ -66,7 +81,7 @@ transparent 0
 //     border-color: white;
 //
 // }
-.topnav, #cv-link, #info-link{
+.toptext, .topnav, #cv-link, #info-link, #title{
   padding: 2px;
   background-color: $nav;
   border-width: thin;
@@ -79,4 +94,91 @@ transparent 0
 body {
   background-image:$gradient;
   background-size: 1vh 1vh;
+}
+.topnav{
+  margin-top: -10px;
+  overflow: scroll;
+}
+.topnav ul {
+  color: #000000;
+  list-style-type: none;
+}
+.topnav li {
+  margin-top: 5px;
+  font-size: 20px;
+  margin-right: 50px;
+  text-align: left;
+}
+a, a:visited {
+  text-decoration: none;
+  color:black;
+}
+footer {
+  margin-top: 30%;
+}
+.postimage{
+  position:relative;
+  /*width:300px;*/
+  /*margin: 0 auto;*/
+}
+/*.imagegallery{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}*/
+.toptext{
+  display: flex;
+  float: right;
+  padding: 20px;
+}
+#info-link{
+  position: absolute;
+  right: 600px;
+  top:450px;
+}
+#cv-link{
+  position: absolute;
+  right: 400px;
+  top:250px;
+}
+img {
+  width: 100%;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#postblock {
+  position:relative;
+  width:300px;
+  margin: 0 auto;
+}
+#postblock .image,
+#postblock .text {transition: 0.1s;}
+#postblock .text {
+  position:absolute;
+  color:black;
+  top:50%;
+  left:25px;
+  opacity:0;
+  transform: translate(0, -50%);
+  width: 80%;
+}
+
+#postblock:hover .text {
+  opacity: 1;
+  background-color: #9f95a8;
+}
+.cv{
+  margin-top: 50px;
+}
+.a{
+  display: inline;
+}
+.a:hover {
+  display: none;
+}
+.b{
+  display: none;
+}
+.b:hover {
+  display: inline;
 }

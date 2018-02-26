@@ -14,13 +14,15 @@
   <h1>Text</h1>
 </div>
 
+
+
   <!-- Post Content -->
 <article>
   <ul class="imagegallery">
   {% for image in subimages %}
   <li>
-    <div class="postimage">
-      <img src="{{ image }}">
+    <div>
+      <img class="postimage" src="{{ image }}">
     </div>
   </li>
   {% endfor %}

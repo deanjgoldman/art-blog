@@ -9,21 +9,20 @@
 
 </style>
 <main>
-<div style="display: inline-block;">
-  <img id="main" class="postblock image" src="{{ title }}">
-  <h1 class="toptext">CAT PAINTING</h1>
-</div>
+<img id="main" class="postblock image" src="{{ title }}">
 <div id="title" class="postblock">
-  <h1>We are up in it</h1>
+  <h1>Text</h1>
 </div>
+
+
 
   <!-- Post Content -->
 <article>
   <ul class="imagegallery">
   {% for image in subimages %}
   <li>
-    <div class="postimage">
-      <img src="{{ image }}">
+    <div>
+      <img class="postimage" src="{{ image }}">
     </div>
   </li>
   {% endfor %}

@@ -43,7 +43,7 @@ transparent 0
   border-style: solid;
   display: grid;
   padding:60pt;
-  grid-template-columns: .2fr .2fr .2fr .2fr;
+  grid-template-columns: .15fr .15fr .15fr .15fr;
   grid-column-gap: 10px;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-row-gap: 5px;
@@ -148,7 +148,7 @@ img {
 
 #postblock {
   position:relative;
-  width:300px;
+  // width:300px;
   margin: 0 auto;
 }
 #postblock .image,

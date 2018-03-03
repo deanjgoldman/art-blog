@@ -1,22 +1,7 @@
 from flask import Flask, render_template
-from flask_assets import Environment, Bundle
-# from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
-env = Environment(app)
-env.load_path = [
-    os.path.join(app.root_path, "sass")
-]
-env.register(
-    "css_all",
-    Bundle(
-        "main.scss",
-        filters="scss",
-        output="css_all.css"
-    )
-)
-
 UPLOAD_FOLDER = 'static/'
 
 

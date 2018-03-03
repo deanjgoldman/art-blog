@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+  .about{
+    margin-top: 70px;
+
+  }
+</style>
+<main>
+<div class="image-scroll">
+  {% for image in images %}
+  <li>
+    <div>
+      <img class="image" src="static/painting/{{ image }}">
+    </div>
+  </li>
+  {% endfor %}
+</div>
+</main>
+{% endblock %}

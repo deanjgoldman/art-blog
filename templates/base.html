@@ -12,38 +12,6 @@
  <!-- Scripts for Base.html -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  // Blueprint of spacing dimensions for index images
-  $(window).on("load, resize", function() {
-
-      var viewportWidth = $(window).width();
-      if (viewportWidth < 600) {
-        $(".postimage").removeClass("postimage").addClass("postblock");
-      }
-   });
-  // var spacing = [
-  //   [400, 20],
-  //   [30, -30],
-  //   [20, -60],
-  //   [10, -90],
-  //   [0, -120],
-  //   [-10, -150],
-  //   [-20, -180],
-  //   [40, -120],
-  //   [30, -150],
-  //   [20, -180],
-  //   [10, -210],
-  //   [0, -240],
-  //   [-100, -270],
-  //   [-200, -300]
-  // ];
-  //   $(function() {
-  //     $('.block').each(function(i,el){
-  //       $(el).css({"right": spacing[i][0], "top": spacing[i][1]});
-  //     });
-  //   });
-
-  </script>
 <script type="text/javascript">
   function cvText(text)
     {
@@ -76,117 +44,40 @@
   </head>
 
   <body>
-<style>
-    @media screen and (max-width: 1400px) {
-      .image{
-        width: 80%;
-      }
-      .image-scroll{
-        display: grid;
-        padding:60pt;
-        grid-template-columns: 1fr 1fr;
-        /*adjust outer values if you want less padding on the sides,
-         in jsfiddle I used 5% */
-        /*grid-template-rows: 10% 200pt 200pt 10%;*/
-        grid-column-gap: 10px;
-        grid-row-gap: 5px;
-      }
-      #info-link{
-        position: absolute;
-        right: 20px;
-        top:10px;
-      }
-      #cv-link{
-        position: absolute;
-        right: 200px;
-        top:10px;
-      }
-
-    }
-
-    @media screen and (max-width: 699px) {
-      .about, .cv{
-        padding-top: 70px;
-      }
-      .about{
-        text-align: center;
-      }
-      .cv{
-        text-align: left;
-      }
-      .gallery{
-        width: 101%;
-      }
-      .image-scroll{
-        display: block;
-      }
-
-      main .postblock {
-          width: 90%;
-          right: 40px;
-      }
-      .postblock{
-        width: 150%;
-      }
-      .topnav {
-          float: left;
-          margin-left: -20px;
-          font-size: 12px;
-          margin-top: 10px;
-      }
-      .topnav ul li {
-          font-size: 120%;
-      }
-      ul li div {
-        right: 20% !important;
-      }
-      .toptext {
-        padding: 20px;
-        float: left;
-      }
-      #info-link{
-        position: absolute;
-        right: 10px;
-        top:20px;
-      }
-      #cv-link{
-        position: absolute;
-        right: 10px;
-        top:40px;
-      }
-      .imagegallery{
-        list-style: none;
-        display: block;
-        padding: 0px;
-      }
-
-    }
-
-
-</style>
     <!-- Nav -->
         <div class="topnav">
           <ul>
-            <li>
-              <a href="{{ url_for('index') }}">ZACK MARSHALL</a>
-
+            <li id="home-link">
+              <a href="{{ url_for('index') }}">ZACK MARSHALL &Psi;</a>
             </li>
-            <li>
+            <!-- <li>
                 <a id="info-link" onmouseover="infoText('Information')"onmouseout="infoBack('Πληροφορία')" href="{{ url_for('.info') }}">Πληροφορία</a>
             </li>
             <li>
                 <a id="cv-link" onmouseover="cvText('Curriculum Vitae')"onmouseout="cvBack('βιογραφικό σημείωμα')" href="{{ url_for('.cv') }}">βιογραφικό σημείωμα</a>
+            </li> -->
+            <li>
+                <a id="painting-link"href="{{ url_for('.painting') }}">Paintings</a>
+            </li>
+            <li>
+                <a id="drawing-link"href="{{ url_for('.drawing') }}">Drawings</a>
+            </li>
+            <li>
+                <a id="sculpture-link" href="{{ url_for('.sculpture') }}">Sculptures</a>
+            </li>
+            <li>
+                <a id="info-link" href="{{ url_for('.info') }}">Info</a>
+            </li>
+            <li>
+                <a id="cv-link" href="{{ url_for('.cv') }}">CV</a>
             </li>
           </ul>
         </div>
-
-<div class="gallery">
-  <!-- endnav -->
+<!-- endnav -->
     <!-- Main Content -->
 {% block content %}
 
 {% endblock %}
-</div>
   </body>
 
 </html>

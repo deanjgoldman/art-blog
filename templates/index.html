@@ -1,23 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-
     <!-- Main Content -->
     <main>
-    <ul class="image-scroll" style="list-style: none;">
-      {% for post in context %}
-      <li>
-        <div class="block" id="postblock">
-          <a href="post/{{ post.postid }}">
-            <img class="image" src="{{ post.image }}">
-          <div class="text">
-            <div>
-              {{ post.title }}
-            </div>
-          </div>
+        <div class="postblock">
+          <a href="http://15orient.com/golem/">
+            <img class="homeimage" src="static/golem.jpg">
           </a>
         </div>
-      </li>
-      {% endfor %}
     </ul>
   </main>
 {% endblock %}
